@@ -1,0 +1,21 @@
+{
+  "name": "@datfinesoul/pi-model-info",
+  "version": "0.1.0",
+  "description": "A Pi extension that compares available models using bundled benchmark information.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Philip Hadviger <613305+datfinesoul@users.noreply.github.com>",
+  "repository": { "type": "git", "url": "git+https://github.com/datfinesoul/pi-model-info.git" },
+  "homepage": "https://github.com/datfinesoul/pi-model-info#readme",
+  "bugs": { "url": "https://github.com/datfinesoul/pi-model-info/issues" },
+  "keywords": ["pi-package", "pi-extension", "model-info"],
+  "files": ["extensions/", "src/", "CHANGELOG.md", "LICENSE", "README.md"],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --test",
+    "pack:check": "node scripts/pack-check.mjs"
+  },
+  "pi": { "extensions": ["./extensions/model-info/index.ts"] },
+  "peerDependencies": { "@earendil-works/pi-coding-agent": "*", "@earendil-works/pi-tui": "*" },
+  "engines": { "node": ">=22.19.0" }
+}
