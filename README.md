@@ -66,9 +66,9 @@ Numeric sorts descend and place unknown values last. Scores use different scales
 
 ## How it works
 
-The extension reads `extensions/model-info/summary.json` when the picker opens. This is an unchanged snapshot of `datfinesoul/model-info`'s existing `data/summary.json`. `snapshot.json` records the source revision, path, and SHA-256 hash. The bundled generation timestamp appears in the picker.
+The extension reads `extensions/model-info/summary.json` when the picker opens. This is an unchanged snapshot of `datfinesoul/model-info`'s existing `data/summary.json`. `snapshot.json` records the source revision, path, SHA-256 hash, and generator hashes. It explicitly marks snapshots generated from uncommitted source changes. The summary records input hashes, so a Git revision alone is not the provenance claim. The bundled generation timestamp appears in the picker.
 
-Pi's live registry determines availability, context limits, reasoning support, and image input. The picker starts with session-scoped models when a scope exists. Tab switches between scoped and all available models without changing the search or sort. Without a scope, it shows all available models and Tab has no effect. Each benchmark entry matches only its exact provider and model ID. Models without benchmark data remain selectable. The initial snapshot covers 33 `opencode-go` models and does not enrich other providers.
+Pi's live registry determines availability, context limits, reasoning support, and image input. The picker starts with session-scoped models when a scope exists. Tab switches between scoped and all available models without changing the search or sort. Without a scope, it shows all available models and Tab has no effect. The schema `1.0.0` summary maps each exact provider/model route to a canonical model. Verified routes share that model's benchmark record, including Luna through OpenCode and Copilot. No runtime alias guessing occurs. Models without benchmark data remain selectable. The bundle covers 52 routes and 44 canonical models. One route has an unresolved identity.
 
 Missing or invalid benchmark data produces a warning. Model selection remains available without enrichment. The extension does not download data, regenerate scores, call an LLM, track cache usage, or write configuration. Selection changes only the current session model, not the default for new sessions. Authentication failure produces an error notification.
 
@@ -98,7 +98,7 @@ Without this variable, installed-Pi checks report a skip. The reload regression 
 
 1. Copy the desired `data/summary.json` from the source checkout into `extensions/model-info/summary.json` without changing its bytes.
 2. Update `snapshot.json` with the source revision and SHA-256 hash.
-3. Increase the extension version and record the snapshot update in the changelog.
+3. Record the snapshot update in the branch's changelog section. Set a new version once for a new feature branch, not for each snapshot edit.
 4. Run the tests and package checks.
 
 No source checkout is required at runtime. Do not run the source acquisition pipeline during extension startup or package installation.

@@ -1,6 +1,13 @@
 {
   "repository": "https://github.com/datfinesoul/model-info",
   "revision": "3bfd4a9533410ebb4929fb83e10c51191411803b",
+  "workingTree": true,
+  "schemaVersion": "1.0.0",
   "path": "data/summary.json",
-  "sha256": "073b5434e0fa9bfcce5b6305335efbae951b2c0fe82816d486db06975c8fd8b1"
+  "sha256": "cec0cdfdb33917cdd0651f8480bd7e5e1bbfae04aa602771eee0c681ef950385",
+  "generatorFiles": {
+    "build_summary.py": "a1b44c53806bb013d76370cc8f130f01b42f86f3d515a1013d7d19d4ffc4ac1c",
+    "identity.py": "3da32ef27ad8629688598a82757e7b351b90a3fea6f8fe0ad319eb6c0a484a6a"
+  },
+  "note": "Generated from uncommitted source changes; source and generator hashes identify the reviewed inputs."
 }

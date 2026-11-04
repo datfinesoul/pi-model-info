@@ -33,14 +33,16 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
       assert.match(render(), /\nSort: Name\n\n/);
       assert.match(render(), /\[opencode-go\]/);
       assert.match(render(), /─/);
-      assert.match(render(), /Snapshot: 2026-11-03/);
-      assert.doesNotMatch(render(), /2026-11-03T/);
+      assert.match(render(), /Snapshot: \d{4}-\d{2}-\d{2}/);
+      assert.doesNotMatch(render(), /Snapshot: \d{4}-\d{2}-\d{2}T/);
       picker.handleInput('\t');
       assert.match(render(), /Scope: all/);
       assert.match(render(), /3 models/);
       picker.handleInput('deepseek');
       assert.match(render(), /1 models/);
       assert.match(render(), /EQ-Bench/);
+      assert.match(render(), /─+\nContext:/);
+      assert.doesNotMatch(render(), /opencode-go\/deepseek-v4-pro/);
       picker.handleInput('\x13'); assert.match(render(), /Sort by/);
       picker.handleInput('\x1b[B'); picker.handleInput('\r'); assert.match(render(), /Sort: Coding/);
       for (const height of [8, 12, 24, 40]) for (const width of [10, 20, 40, 100]) {

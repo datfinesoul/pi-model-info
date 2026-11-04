@@ -53,8 +53,8 @@ export function createPicker(items, generatedAt, { Input, SelectList, truncateTo
         const header = [divider, '', ...input.render(width),
           `${dim('Scope: ')}${accent(scoped ? 'scoped' : 'all')}   ${dim(`${current.length} models`)}`,
           `${dim('Sort: ')}${SORT_LABELS[mode]}`, ''];
-        const detailRows = detailLines(selectedItem()).map((line, i) =>
-          i === 0 ? accent(line) : theme.fg(/^(Scores|No bundled)/.test(line) ? 'dim' : 'muted', line));
+        const detailRows = detailLines(selectedItem()).map(line =>
+          theme.fg(/^(Scores|No bundled)/.test(line) ? 'dim' : 'muted', line));
         // On short terminals reserve the footer rather than clipping the controls.
         const body = [...header, ...list.render(width), '', divider, ...detailRows, ''];
         lines = [...body.slice(0, Math.max(0, height - footer.length)), ...footer];
