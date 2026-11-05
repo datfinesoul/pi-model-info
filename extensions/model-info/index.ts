@@ -1,5 +1,5 @@
 import type { ExtensionAPI } from '@earendil-works/pi-coding-agent';
-import { Input, SelectList, truncateToWidth, matchesKey, Key } from '@earendil-works/pi-tui';
+import { Input, SelectList, truncateToWidth, visibleWidth, matchesKey, Key } from '@earendil-works/pi-tui';
 import { readFile } from 'node:fs/promises';
 import { joinModels, parseSummary } from '../../src/catalog.ts';
 import { createPicker } from '../../src/picker.ts';
@@ -25,7 +25,7 @@ export default function (pi: ExtensionAPI) {
       if (!models.length) { ctx.ui.notify('No available models in the current scope', 'warning'); return; }
       const selected = await ctx.ui.custom<(typeof models)[number] | null>((tui, theme, keybindings, done) =>
         createPicker(joinModels(models, catalog), catalog?.generatedAt,
-          { Input, SelectList, truncateToWidth, matchesKey, Key }, tui, theme, keybindings, done, scopeKeys));
+          { Input, SelectList, truncateToWidth, visibleWidth, matchesKey, Key }, tui, theme, keybindings, done, scopeKeys));
       if (selected) {
         const success = await pi.setModel(selected);
         ctx.ui.notify(success ? `Switched to ${selected.provider}/${selected.id}` : `Authentication unavailable for ${selected.provider}`,

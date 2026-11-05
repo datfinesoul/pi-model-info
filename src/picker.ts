@@ -1,7 +1,7 @@
 import { detailLines, filterSort, metric, SORTS, SORT_LABELS } from './catalog.ts';
 
 // Host components are injected so the picker can be tested without installing Pi.
-export function createPicker(items, generatedAt, { Input, SelectList, truncateToWidth, matchesKey, Key }, tui, theme, keybindings, done, scopeKeys = new Set()) {
+export function createPicker(items, generatedAt, { Input, SelectList, truncateToWidth, visibleWidth, matchesKey, Key }, tui, theme, keybindings, done, scopeKeys = new Set()) {
   let scoped = scopeKeys.size > 0;
   const input = new Input({ prompt: 'Search: ', placeholder: 'provider or model' });
   let mode = 'name';
@@ -46,15 +46,18 @@ export function createPicker(items, generatedAt, { Input, SelectList, truncateTo
       } else {
         const selectedItem = () => items.find(item => item.key === list.getSelectedItem()?.value);
         const details = detailLines(selectedItem());
-        const visible = Math.max(1, Math.min(8, height - details.length - 13));
+        const visible = Math.max(1, Math.min(8, height - details.length - 12));
         if (visible !== listHeight) rebuild(visible);
-        const help = `↑↓ navigate   Enter switch   Esc cancel${scopeKeys.size ? '   Tab scope' : ''}   Ctrl+S sort`;
+        const help = `Esc cancel${scopeKeys.size ? '   Tab scope' : ''}   Ctrl+S sort`;
         const footer = [dim(help), dim(`Snapshot: ${generatedAt ? generatedAt.slice(0, 10) : 'unavailable'}`), divider];
-        const header = [divider, '', ...input.render(width),
+        const sort = `${dim('Sort: ')}${SORT_LABELS[mode]}`;
+        const scope = truncateToWidth(
           `${dim('Scope: ')}${accent(scoped ? 'scoped' : 'all')}   ${dim(`${current.length} models`)}`,
-          `${dim('Sort: ')}${SORT_LABELS[mode]}`, ''];
+          Math.max(0, width - visibleWidth(sort) - 2));
+        const header = [divider, '', ...input.render(width),
+          `${scope}${' '.repeat(Math.max(2, width - visibleWidth(scope) - visibleWidth(sort)))}${sort}`, ''];
         const detailRows = detailLines(selectedItem()).map(line =>
-          theme.fg(/^(Scores|No bundled)/.test(line) ? 'dim' : 'muted', line));
+          theme.fg(/^(No bundled)/.test(line) ? 'dim' : 'muted', line));
         // On short terminals reserve the footer rather than clipping the controls.
         const body = [...header, ...list.render(width), '', divider, ...detailRows, ''];
         lines = [...body.slice(0, Math.max(0, height - footer.length)), ...footer];

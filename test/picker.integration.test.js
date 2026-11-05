@@ -30,7 +30,9 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
       assert.match(render(), /^─+\n\nSearch:/);
       assert.match(render(), /\n─+$/);
       assert.doesNotMatch(render(), /Model information/);
-      assert.match(render(), /\nSort: Name\n\n/);
+      assert.match(render(), /Scope: all   3 models +Sort: Name\n\n/);
+      assert.equal(picker.render(100).find(line => line.includes('Scope:')).length, 100);
+      assert.doesNotMatch(render(), /↑↓ navigate|Enter switch|Scores use/);
       assert.match(render(), /\[opencode-go\]/);
       assert.match(render(), /─/);
       assert.match(render(), /Snapshot: \d{4}-\d{2}-\d{2}/);
@@ -42,6 +44,7 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
       assert.match(render(), /1 models/);
       assert.match(render(), /EQ-Bench/);
       assert.match(render(), /─+\nContext:/);
+      assert.match(render(), /Reasoning:[^\n]*\n\nCoding:/);
       assert.doesNotMatch(render(), /opencode-go\/deepseek-v4-pro/);
       picker.handleInput('\x13'); assert.match(render(), /Sort by/);
       picker.handleInput('\x1b[B'); picker.handleInput('\r'); assert.match(render(), /Sort: Coding/);
@@ -50,7 +53,7 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
         const lines = picker.render(width);
         assert.ok(lines.length <= height);
         assert.ok(lines.every(line => visibleWidth(line) <= width));
-        if (width === 100) assert.match(lines.join('\n'), /Enter switch.*Esc cancel/);
+        if (width === 100) assert.match(lines.join('\n'), /Esc cancel.*Ctrl\+S sort/);
       }
       tui.terminal.rows = 24;
       picker.invalidate(); picker.handleInput('\r');

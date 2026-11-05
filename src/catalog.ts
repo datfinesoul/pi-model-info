@@ -70,10 +70,9 @@ export function detailLines(item) {
   const { model, info } = item;
   const lines = [`Context: ${tokens(model.contextWindow)} | Max output: ${tokens(model.maxTokens)}`,
     `Reasoning: ${model.reasoning ? 'yes' : 'no'} | Image input: ${model.input?.includes('image') ? 'yes' : 'no'}`];
-  if (!info) return [...lines, 'No bundled benchmark information for this provider/model'];
-  return [...lines,
+  if (!info) return [...lines, '', 'No bundled benchmark information for this provider/model'];
+  return [...lines, '',
     `Coding: ${value(info.coding.value)} (0–1) | ${signals[info.coding.signal] ?? 'no source'}`,
     `Writing: ${value(info.writing?.elo)} Elo | EQ-Bench Creative Writing v3`,
-    `Intelligence: ${value(info.aa.bestIntelligence)} index | AA Free (best matched variant)`,
-    'Scores use different scales; they are not a composite or effort-specific rating.'];
+    `Intelligence: ${value(info.aa.bestIntelligence)} index | AA Free (best matched variant)`];
 }
