@@ -53,7 +53,8 @@ test('actual Pi loader reloads both picker and catalog in the same process', {
     const final = await render();
     assert.match(final, /Reloaded picker/);
     assert.match(final, /Sort: Reloaded catalog/);
-    assert.match(final, /EQ-Bench/);
+    assert.match(final, /Writing 58/);
+    assert.doesNotMatch(final, /EQ-Bench|Elo/);
   } finally {
     clearExtensionCache();
     await rm(directory, { recursive: true, force: true });

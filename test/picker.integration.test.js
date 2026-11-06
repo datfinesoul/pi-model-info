@@ -42,12 +42,27 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
       assert.match(render(), /3 models/);
       picker.handleInput('deepseek');
       assert.match(render(), /1 models/);
-      assert.match(render(), /EQ-Bench/);
+      assert.match(render(), /Writing 58/);
+      assert.doesNotMatch(render(), /Elo|EQ-Bench|AI writing:/);
       assert.match(render(), /─+\nContext:/);
-      assert.match(render(), /Reasoning:[^\n]*\n\nCoding:/);
+      assert.match(render(), /Reasoning:/);
+      assert.doesNotMatch(render(), /Coding:|Writing variant:|Quantization:|Source scores only/);
       assert.doesNotMatch(render(), /opencode-go\/deepseek-v4-pro/);
       picker.handleInput('\x13'); assert.match(render(), /Sort by/);
       picker.handleInput('\x1b[B'); picker.handleInput('\r'); assert.match(render(), /Sort: Coding/);
+      picker.handleInput('\x13');
+      picker.handleInput('\x1b[B'); picker.handleInput('\r');
+      assert.match(render(), /Sort: Writing \(AI-judged, 0–100\)/);
+      picker.handleInput('\x05');
+      assert.match(render(), /Benchmark evidence/);
+      const firstEvidence = render();
+      picker.handleInput('\x1b[B');
+      assert.notEqual(render(), firstEvidence);
+      for (const width of [10, 40, 100]) {
+        assert.ok(picker.render(width).every(line => visibleWidth(line) <= width));
+      }
+      picker.handleInput('\x1b');
+      assert.match(render(), /Sort: Writing/);
       for (const height of [8, 12, 24, 40]) for (const width of [10, 20, 40, 100]) {
         tui.terminal.rows = height;
         const lines = picker.render(width);
@@ -70,6 +85,13 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
     const view = picker.render(100).join('\n');
     assert.match(view, /1 models/); assert.match(view, /unknown/); assert.doesNotMatch(view, /deepseek/);
     assert.match(view, /Scope: scoped/);
+    picker.handleInput('\x13');
+    const emptySorts = picker.render(100).join('\n');
+    assert.match(emptySorts, /Sort by \(1\/3\)/);
+    assert.match(emptySorts, /Coding \(DeepSWE 1.1\)/);
+    assert.match(emptySorts, /Writing \(AI-judged, 0–100\)/);
+    assert.doesNotMatch(emptySorts, /AA intelligence|group \d/);
+    picker.handleInput('\x1b');
     picker.handleInput('\t');
     assert.match(picker.render(160).join('\n'), /Scope: all.*3 models/);
     picker.handleInput('deepseek');

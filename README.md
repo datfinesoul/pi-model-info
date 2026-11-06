@@ -49,6 +49,7 @@ Run `/models` in interactive TUI mode.
 - Use Up/Down to select a row.
 - Press Tab to toggle between scoped and all available models when a scope exists.
 - Press Ctrl+S to open the sort menu.
+- Press Ctrl+E to inspect benchmark evidence for the selected model. Use Up/Down to scroll and Escape to return.
 - Use Up/Down and Enter to choose a sort.
 - Press Enter on a model to switch the current session.
 - Press Escape to cancel without switching.
@@ -58,17 +59,28 @@ The picker supports Pi's configured selection keybindings. Ctrl+S is a fixed pic
 | Sort | Value | Source |
 |------|-------|--------|
 | Name | Provider/model ID | Live Pi registry |
-| Coding | Normalized value, 0–1 | Summary-selected OpenRouter, third-party, or vendor-reported result |
-| Writing | Elo rating | EQ-Bench Creative Writing v3 |
-| AA intelligence | Best matched variant index | Artificial Analysis Free |
+| Coding | DeepSWE 1.1 score, 0–1 | Maximum published effort, vendor-reported |
+| Writing | Bradley-Terry score, 0–100, not a percentage | AI Writing Benchmark (AI-judged) |
 
-Numeric sorts descend and place unknown values last. Scores use different scales and are not a composite rating. Intelligence represents the best matched variant, not the current Pi thinking level. Coding results can use different sources. The detail panel identifies the selected source.
+Numeric sorts descend and place unknown values last. Scores use different scales and are not a composite rating. Coding uses only the artifact's `deepswe-1.1-max-published-effort` comparison series. It is not a general coding ranking. Maximum effort does not imply equal compute, and evaluation protocols are not independently verified. The picker shows a short qualification beside the controls.
+
+Writing uses only AI Writing Benchmark scores. These scores reflect AI-judge preferences, not human ratings. The value 50 estimates an even chance against the average model in English. It is not a percentage. Missing scores remain unknown, even when EQ-Bench Elo exists in the bundle.
+
+Each row shows Coding and Writing scores, regardless of the active sort. Missing values show `n/a`. The bottom panel shows only context limits, output limits, reasoning support, and image input.
+
+The sort menu always contains Name, Coding, and Writing. Scope changes preserve the selected sort. Individual benchmark groups and intelligence are not main-menu choices.
+
+Effort, quantization, and evaluation conditions can differ between models. Use Ctrl+E for source details, variants, and missing-score explanations.
 
 ## How it works
 
 The extension reads `extensions/model-info/summary.json` when the picker opens. This is an unchanged snapshot of `datfinesoul/model-info`'s existing `data/summary.json`. `snapshot.json` records the source revision, path, SHA-256 hash, and generator hashes. It explicitly marks snapshots generated from uncommitted source changes. The summary records input hashes, so a Git revision alone is not the provenance claim. The bundled generation timestamp appears in the picker.
 
-Pi's live registry determines availability, context limits, reasoning support, and image input. The picker starts with session-scoped models when a scope exists. Tab switches between scoped and all available models without changing the search or sort. Without a scope, it shows all available models and Tab has no effect. The schema `1.0.0` summary maps each exact provider/model route to a canonical model. Verified routes share that model's benchmark record, including Luna through OpenCode and Copilot. No runtime alias guessing occurs. Models without benchmark data remain selectable. The bundle covers 52 routes and 44 canonical models. One route has an unresolved identity.
+Pi's live registry determines availability, context limits, reasoning support, and image input. The picker starts with session-scoped models when a scope exists. Tab switches between scoped and all available models without changing the search. It preserves the selected sort even when the new scope has no scores for it. Without a scope, it shows all available models and Tab has no effect. The schema `1.0.0` summary maps each exact provider/model route to a canonical model. Verified routes share that model's benchmark record, including Luna through OpenCode and Copilot. No runtime alias guessing occurs. Models without benchmark data remain selectable. The bundle covers 52 routes and 44 canonical models. One route has an unresolved identity.
+
+The evidence view shows individual ZeroEval coding results, reporting and verification flags, evaluation conditions, comparison groups, and source links. These results never become a composite coding sort. It also shows the selected DeepSWE result, its limitations, writing score intervals, comparison counts, and separate human measurements. Source matches and snapshot metadata remain available for inspection. EQ-Bench Elo and other secondary measures remain in the bundled artifact but are not picker sort keys.
+
+The consumer validates comparison groups for coding and writing. It rejects mixed groups, incompatible scales, and older snapshots that lack the required group metadata, even if they declare schema `1.0.0`. ZeroEval category means and the OpenRouter coding index remain evidence only. They never replace a missing DeepSWE comparison result.
 
 Missing or invalid benchmark data produces a warning. Model selection remains available without enrichment. The extension does not download data, regenerate scores, call an LLM, track cache usage, or write configuration. Selection changes only the current session model, not the default for new sessions. Authentication failure produces an error notification.
 
