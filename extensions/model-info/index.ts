@@ -14,7 +14,8 @@ export default function (pi: ExtensionAPI) {
       }
       let catalog;
       try {
-        catalog = parseSummary(await readFile(new URL('./summary.json', import.meta.url), 'utf8'));
+        const summary = await readFile(new URL('./summary.json', import.meta.url), 'utf8');
+        catalog = parseSummary(summary);
       } catch (error) {
         ctx.ui.notify(`Bundled model information unavailable: ${error instanceof Error ? error.message : String(error)}`, 'warning');
       }

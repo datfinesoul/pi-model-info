@@ -6,7 +6,10 @@ import { parseSummary, joinModels, filterSort, detailLines, metric, evidenceLine
 
 const text = readFileSync(new URL('../extensions/model-info/summary.json', import.meta.url), 'utf8');
 const data = JSON.parse(text);
-const catalog = parseSummary(text);
+const measurements = readFileSync(new URL('../extensions/model-info/measurement-contract.json', import.meta.url), 'utf8');
+const contract = JSON.parse(measurements);
+const publisher = contract.series.find(series => series.seriesId === 'coding:deepswe-1.1-publisher');
+const catalog = parseSummary(text, measurements);
 const model = (id, provider = 'github-copilot') => ({ id, provider, name: id, contextWindow: 100000, maxTokens: 1000, reasoning: true, input: ['text', 'image'] });
 const selected = joinModels(['claude-opus-5.5', 'gpt-6-luna', 'gpt-6.1-sol'].map(id => model(id)), catalog);
 
@@ -15,26 +18,30 @@ test('artifact provenance and every route are retained', () => {
   assert.equal(createHash('sha256').update(text).digest('hex'), meta.sha256);
   assert.deepEqual(meta.generatorFiles, data.generator.files);
   assert.equal(catalog.entries.size, Object.keys(data.availability).length);
+  assert.equal(createHash('sha256').update(measurements).digest('hex'), meta.measurementContract.sha256);
+  assert.deepEqual(meta.measurementContract.generatorFiles, contract.generator.files);
 });
 const sourceArtifact = new URL('../../model-info/data/summary.json', import.meta.url);
 test('source and bundle stay byte-identical in the ACP', { skip: !existsSync(sourceArtifact) }, () => {
   assert.equal(readFileSync(sourceArtifact, 'utf8'), text);
+  assert.equal(readFileSync(new URL('../../model-info/data/measurement-contract.json', import.meta.url), 'utf8'), measurements);
 });
 
-test('stable menu contains only Name, Coding and Writing in every scope', () => {
+test('stable menu separates AA index, DeepSWE and Writing in every scope', () => {
   for (const items of [selected, [], [{ key: 'p/new', model: {} }]]) {
-    assert.deepEqual(sortOptions(items).map(option => option.id), ['name', 'coding', 'writing']);
+    assert.deepEqual(sortOptions(items).map(option => option.id), ['name', 'coding-index', 'coding', 'writing']);
   }
 });
 
-test('selected coding series uses exact published max-effort scores, not high-effort evidence', () => {
+test('primary Coding uses vendor maximum published effort, not best observed or publisher coverage', () => {
   assert.deepEqual(selected.map(item => metric(item, 'coding')), [0.742, 0.6659, 0.719]);
-  assert.deepEqual(filterSort(selected, '', 'coding').map(item => item.model.id), ['claude-opus-5.5', 'gpt-6.1-sol', 'gpt-6-luna']);
-  assert.notEqual(metric(selected[2], 'coding'), 0.7522);
-  for (const item of selected) {
-    assert.equal(item.info.coding.value, null);
-    assert.match(evidenceLines(item).join('\n'), /not an overall coding score/);
-  }
+  assert.deepEqual(selected.map(item => item.info.codingComparison.result.effort), ['adaptive max', 'max', 'max']);
+  assert.deepEqual(filterSort(selected, '', 'coding').map(item => metric(item, 'coding')), [0.742, 0.719, 0.6659]);
+  assert.equal(data.consumerComparisons.coding.coverage.measuredModelCount, 3);
+  assert.equal(data.consumerComparisons.writing.coverage.measuredModelCount, 38);
+  assert.equal(new Set(publisher.selectedRecords.map(record => record.modelKey)).size, 15);
+  assert.match(evidenceLines(selected[2]).join('\n'), /0.719/);
+  assert.match(evidenceLines(selected[2]).join('\n'), /not established|not verify/);
 });
 
 test('writing uses AI-judge series only, never Elo or human scores', () => {
@@ -45,29 +52,28 @@ test('writing uses AI-judge series only, never Elo or human scores', () => {
 });
 
 test('rows show both scores and no intelligence, while details stay compact', () => {
-  assert.match(rowDescription(selected[0], 'name'), /Code 0.742.*Writing 93.1/);
+  assert.match(rowDescription(selected[0], 'name'), /AA .*DeepSWE 0.742.*Writing 93.1/);
   assert.doesNotMatch(rowDescription(selected[0], 'name'), /Intel|—/);
-  assert.match(rowDescription({ model: model('new') }, 'coding'), /Code n\/a.*Writing n\/a/);
+  assert.match(rowDescription({ model: model('new') }, 'coding'), /AA n\/a.*DeepSWE n\/a.*Writing n\/a/);
   assert.equal(detailLines(selected[0]).length, 2);
 });
 
 test('unknown coding never falls back to another index or ZeroEval mean', () => {
-  const item = joinModels([model('gpt-5.6-luna', 'opencode-go')], catalog)[0];
-  assert.equal(item.info.coding.value, 0.714);
-  assert.equal(metric(item, 'coding'), null);
+  const missingPrimary = [...catalog.entries.values()].find(info => info?.codingComparison.result.score === null);
+  assert.equal(metric({ info: missingPrimary }, 'coding'), null);
+  assert.match(evidenceLines({ key: 'missing', info: missingPrimary }).join('\n'), /not a fallback/);
   const missing = joinModels([model('gpt-6.1-sol', 'other')], catalog)[0];
   assert.equal(missing.info, undefined);
 });
 
 test('every route preserves canonical identity, writing values and coding evidence', () => {
-  const series = data.scores.codingComparisons.find(series => series.seriesId === 'deepswe-1.1-max-published-effort');
   for (const [key, route] of Object.entries(data.availability)) {
     const info = catalog.entries.get(key);
     if (route.modelKey === null) { assert.equal(info, undefined); continue; }
     const source = data.models[route.modelKey];
     const item = { key, model: model(route.id, route.provider), info };
-    assert.equal(metric(item, 'coding'), series.results.find(result => result.modelKey === route.modelKey)?.score ?? null);
-    assert.equal(metric(item, 'writing'), source.writingMeasurements?.aiWritingBenchmark?.metrics?.duelScore100?.score ?? null);
+    assert.equal(metric(item, 'coding'), data.consumerComparisons.coding.results.find(result => result.modelKey === route.modelKey).score);
+    assert.equal(metric(item, 'writing'), data.consumerComparisons.writing.results.find(result => result.modelKey === route.modelKey).score);
     const expected = data.scores.codingEvidence.benchmarks.flatMap(benchmark => benchmark.results.filter(result => result.modelKey === route.modelKey));
     assert.deepEqual(info.codingEvidence.map(entry => entry.result), expected);
   }
@@ -85,18 +91,12 @@ test('invalid consumed contract fields fail closed even with unchanged schema ve
   const mutations = [
     d => { d.schemaVersion = 'future'; },
     d => { d.generatedAt = 'bad'; },
-    d => { delete d.scores.codingComparisons; },
-    d => { d.scores.codingComparisons[0].comparisonGroupId = 'wrong'; },
-    d => { d.scores.codingComparisons[0].results[0].comparisonGroupId = 'wrong'; },
-    d => { d.scores.codingComparisons[0].results[0].score = 2; },
-    d => { d.scores.codingComparisons[0].results.push(d.scores.codingComparisons[0].results[0]); },
-    d => { d.scores.codingComparisons[0].scale.id = 'wrong'; },
     d => { d.models['openai/gpt-6.1-sol'].writingMeasurements.aiWritingBenchmark.metrics.duelScore100.score = '95'; },
     d => { d.models['openai/gpt-6.1-sol'].writingMeasurements.aiWritingBenchmark.metrics.duelScore100.comparisonGroupId = 'wrong'; },
     d => { Object.values(d.availability)[0].modelKey = 'missing/model'; },
   ];
   for (const mutate of mutations) {
     const copy = JSON.parse(text); mutate(copy);
-    assert.throws(() => parseSummary(JSON.stringify(copy)));
+    assert.throws(() => parseSummary(JSON.stringify(copy), measurements));
   }
 });

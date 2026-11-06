@@ -1,4 +1,5 @@
 {
+  "artifactKind": "model-info-summary",
   "availability": {
     "github-copilot/claude-haiku-4.5": {
       "context": "200K",
@@ -521,15 +522,3288 @@
       "thinking": true
     }
   },
+  "consumerComparisons": {
+    "coding": {
+      "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+      "comparisonId": "deepswe-1.1-max-published-effort",
+      "comparisonStatus": "Conditional benchmark-specific comparison, not a general coding ranking.",
+      "coverage": {
+        "catalogModelCount": 44,
+        "measuredModelCount": 3,
+        "measuredModelKeys": [
+          "anthropic/claude-opus-5-5",
+          "openai/gpt-6-luna",
+          "openai/gpt-6.1-sol"
+        ],
+        "missingModelCount": 41,
+        "missingModelKeys": [
+          "alibaba/qwen3.7-plus",
+          "alibaba/qwen3.8-flash",
+          "alibaba/qwen3.8-max",
+          "anthropic/claude-haiku-4-5",
+          "anthropic/claude-haiku-5-5",
+          "anthropic/claude-opus-4-8",
+          "anthropic/claude-opus-5",
+          "anthropic/claude-sonnet-5",
+          "anthropic/claude-sonnet-5-5",
+          "deepseek/deepseek-v4-pro",
+          "deepseek/deepseek-v4.1-flash",
+          "google/gemini-3.8-flash",
+          "google/gemini-4-argon",
+          "meituan/longcat-2.0",
+          "meituan/longcat-2.5-preview",
+          "meta/muse-spark-1.2",
+          "meta/muse-spark-1.3",
+          "microsoft/mai-code-1.1-flash",
+          "minimax/MiniMax-M3",
+          "minimax/MiniMax-M3.1-Flash",
+          "moonshotai/kimi-k2.7-code",
+          "moonshotai/kimi-k3",
+          "moonshotai/kimi-k3.1-pro",
+          "openai/gpt-5.3-codex",
+          "openai/gpt-5.6-luna",
+          "openai/gpt-5.6-sol",
+          "openai/gpt-6-sol",
+          "openai/gpt-6.1-terra",
+          "reflection/beam-1.0-501b-a23b",
+          "stepfun/step-5-preview",
+          "tencent/hy3",
+          "tencent/hy4-preview",
+          "xai/grok-4.6",
+          "xai/grok-4.7",
+          "xiaomi/mimo-v2.5",
+          "xiaomi/mimo-v2.5-pro",
+          "xiaomi/mimo-v2.6-flash",
+          "xiaomi/mimo-v2.6-pro",
+          "zhipuai/glm-5.2",
+          "zhipuai/glm-5.3",
+          "zhipuai/glm-5.3-flash"
+        ]
+      },
+      "evaluationConditions": {
+        "benchmarkDefinition": "ZeroEval describes DeepSWE 1.1 as a software-engineering agent benchmark using the mini-swe-agent harness.",
+        "effortComparability": "Maximum-effort labels are vendor-specific and do not imply equal compute.",
+        "effortPolicy": "Use one published score at the maximum reasoning effort listed for each model.",
+        "evidenceType": "Vendor-reported",
+        "protocolEquivalence": "Not verified across vendors."
+      },
+      "label": "Coding",
+      "limitations": [
+        "This series compares one benchmark only. It is not an overall coding score.",
+        "The maximum-effort labels do not define a common compute budget.",
+        "Anthropic reports a five-trial average. OpenAI reports results from its research environments or API, which may differ from production.",
+        "The sources do not verify that all evaluation harnesses and protocols are equivalent.",
+        "The three scores are vendor-reported and are not independently verified.",
+        "Numerical ordering is descriptive. Cross-vendor protocol equivalence and statistical significance are not established.",
+        "Other publisher results and the AA index remain separate evidence, not extensions of this ranking.",
+        "Canonical benchmark results do not establish the performance of an exact provider route or its current Pi effort."
+      ],
+      "measurementLabel": "DeepSWE 1.1 \u2014 vendor maximum published effort",
+      "methodology": "Compare the reviewed vendor-reported DeepSWE 1.1 score at each model publisher's maximum listed effort. This is a conditional software-engineering benchmark comparison, not overall coding ability.",
+      "missingValuePolicy": "Null is unavailable, never zero. No substitution from another series, benchmark, effort, or model.",
+      "orderedModelKeys": [
+        "anthropic/claude-opus-5-5",
+        "openai/gpt-6.1-sol",
+        "openai/gpt-6-luna"
+      ],
+      "orderingPolicy": "Descending supplied score. Equal scores tie; modelKey orders ties for display only. Numerical order does not establish statistical significance.",
+      "results": [
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "alibaba/qwen3.7-plus",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "alibaba/qwen3.8-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "alibaba/qwen3.8-max",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-haiku-4-5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-haiku-5-5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-opus-4-8",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-opus-5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+          "effort": "adaptive max",
+          "modelKey": "anthropic/claude-opus-5-5",
+          "provenance": {
+            "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+            "modelKey": "anthropic/claude-opus-5-5",
+            "reasoningEffort": "adaptive max",
+            "score": 0.742,
+            "selfReported": true,
+            "sourceEvidence": {
+              "conditionsExcerpt": "Unless otherwise noted, all Claude Opus 5.5 results use the following standard configuration: adaptive thinking at max effort, default sampling settings (temperature, top_p), averaged over five trials.",
+              "scoreExcerpt": "Claude Opus 5.5 scored an average of 74.2% over five trials.",
+              "sourceFinalUrl": "https://assets.claude.com/fc1b44717c85dc068bc6ba5024219938094694bd.pdf",
+              "sourceLocation": "System Card \u00a7\u00a78.1 and 8.3",
+              "sourcePageSha256": "7311c9c6bbb16d012f1c12c7418b05949fcf7ae3e30d2c40f22050074b2a7378",
+              "sourceScorePercent": 74.2,
+              "sourceUrl": "https://www.anthropic.com/claude-opus-5-5-system-card",
+              "trials": 5
+            },
+            "sourceScore": 74.2,
+            "sourceScoreScale": "percent",
+            "zeroEvalBaseline": {
+              "analysisMethod": "System Card \u00a78.3. DeepSWE v1.1; 5-trial average. Adaptive thinking at max effort.",
+              "score": 0.742,
+              "sourceModelId": "claude-opus-5-5",
+              "sourceSnapshot": "data/sources/zeroeval-model-details/claude-opus-5-5.json",
+              "sourceUrl": "https://www.anthropic.com/claude-opus-5-5-system-card",
+              "verified": false
+            }
+          },
+          "score": 0.742,
+          "sourceRecordIds": [
+            "claude-opus-5-5"
+          ],
+          "unavailableReason": null,
+          "uncertainty": null,
+          "uncertaintyUnavailableReason": "No comparable score intervals or repeated-run uncertainty supplied for this series."
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-sonnet-5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-sonnet-5-5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "deepseek/deepseek-v4-pro",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "deepseek/deepseek-v4.1-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "google/gemini-3.8-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "google/gemini-4-argon",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "meituan/longcat-2.0",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "meituan/longcat-2.5-preview",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "meta/muse-spark-1.2",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "meta/muse-spark-1.3",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "microsoft/mai-code-1.1-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "minimax/MiniMax-M3",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "minimax/MiniMax-M3.1-Flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "moonshotai/kimi-k2.7-code",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "moonshotai/kimi-k3",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "moonshotai/kimi-k3.1-pro",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "openai/gpt-5.3-codex",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "openai/gpt-5.6-luna",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "openai/gpt-5.6-sol",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+          "effort": "max",
+          "modelKey": "openai/gpt-6-luna",
+          "provenance": {
+            "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+            "modelKey": "openai/gpt-6-luna",
+            "reasoningEffort": "max",
+            "score": 0.6659,
+            "selfReported": true,
+            "sourceEvidence": {
+              "chartRecord": {
+                "benchmark": "DeepSWE",
+                "effortLabel": "max",
+                "modelLabel": "GPT-6 Luna",
+                "score": 0.6659
+              },
+              "roundingNote": "The ZeroEval snapshot rounds this chart score to 0.666.",
+              "scoreExcerpt": "GPT-6 Luna at max effort scores 66.6%.",
+              "sourceLocation": "DeepSWE chart, max-effort row",
+              "sourcePageSha256": "2ccdc03344671b7bd6ad66e4114a26f961d96aafe703e30cc604695cb96b83a9",
+              "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+            },
+            "sourceScore": 0.6659,
+            "sourceScoreScale": "fraction",
+            "zeroEvalBaseline": {
+              "analysisMethod": "OpenAI September 22, 2026 launch interactive chart. Highest published score across the reported effort sweep: max effort. Cost per task: $0.22. Long-horizon software engineering. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+              "score": 0.666,
+              "sourceModelId": "gpt-6-luna",
+              "sourceSnapshot": "data/sources/zeroeval-model-details/gpt-6-luna.json",
+              "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+              "verified": false
+            }
+          },
+          "score": 0.6659,
+          "sourceRecordIds": [
+            "gpt-6-luna"
+          ],
+          "unavailableReason": null,
+          "uncertainty": null,
+          "uncertaintyUnavailableReason": "No comparable score intervals or repeated-run uncertainty supplied for this series."
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "openai/gpt-6-sol",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+          "effort": "max",
+          "modelKey": "openai/gpt-6.1-sol",
+          "provenance": {
+            "comparisonGroupId": "coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05",
+            "modelKey": "openai/gpt-6.1-sol",
+            "reasoningEffort": "max",
+            "score": 0.719,
+            "selfReported": true,
+            "sourceEvidence": {
+              "chartRecord": {
+                "benchmark": "DeepSWE",
+                "effortLabel": "Max",
+                "modelLabel": "GPT-6.1 Sol",
+                "score": 0.719
+              },
+              "scoreExcerpt": "The DeepSWE chart lists GPT-6.1 Sol at max effort with score 0.719.",
+              "sourceLocation": "DeepSWE chart, max-effort row",
+              "sourcePageSha256": "3bfdeb51b28ac6922600074f1106b0ab776b763eb0b642595ce83dc5eb8f42ee",
+              "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-sol/",
+              "zeroEvalNote": "The ZeroEval snapshot's selected score is 0.7522 at high effort. This series uses the source-published max-effort score."
+            },
+            "sourceScore": 0.719,
+            "sourceScoreScale": "fraction",
+            "zeroEvalBaseline": {
+              "analysisMethod": "DeepSWE v1.1. OpenAI GPT-6.1 Sol launch interactive chart. Highest published score across the reported effort sweep: high effort (0.7522). Other efforts: low 0.6438, medium 0.7301, xhigh 0.719, max 0.719. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+              "score": 0.7522,
+              "sourceModelId": "gpt-6.1-sol",
+              "sourceSnapshot": "data/sources/zeroeval-model-details/gpt-6.1-sol.json",
+              "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-sol/",
+              "verified": false
+            }
+          },
+          "score": 0.719,
+          "sourceRecordIds": [
+            "gpt-6.1-sol"
+          ],
+          "unavailableReason": null,
+          "uncertainty": null,
+          "uncertaintyUnavailableReason": "No comparable score intervals or repeated-run uncertainty supplied for this series."
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "openai/gpt-6.1-terra",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "reflection/beam-1.0-501b-a23b",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "stepfun/step-5-preview",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "tencent/hy3",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "tencent/hy4-preview",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "xai/grok-4.6",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "xai/grok-4.7",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "xiaomi/mimo-v2.5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "xiaomi/mimo-v2.5-pro",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "xiaomi/mimo-v2.6-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "xiaomi/mimo-v2.6-pro",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "zhipuai/glm-5.2",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "zhipuai/glm-5.3",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "zhipuai/glm-5.3-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No reviewed maximum-published-effort result in the primary vendor DeepSWE 1.1 series. Other Coding evidence is not a fallback.",
+          "uncertainty": null
+        }
+      ],
+      "scale": {
+        "id": "deepswe-1.1-score-fraction-0-to-1",
+        "label": "Source score expressed as a fraction. Divide source percentages by 100.",
+        "maximum": 1,
+        "minimum": 0
+      },
+      "scoreDirection": "higher-is-better",
+      "selectionPolicy": {
+        "aggregation": "None. Preserve one source score per model. Convert percentages to fractions only.",
+        "effortPolicy": "Use one published score at the maximum reasoning effort listed for each model.",
+        "replacementPolicy": "A replacement requires an explicit producer methodology review and contract revision. Retain required-model coverage and declared comparison conditions. Coverage growth alone never authorizes replacement.",
+        "requiredModelKeys": [
+          "anthropic/claude-opus-5-5",
+          "openai/gpt-6-luna",
+          "openai/gpt-6.1-sol"
+        ],
+        "seriesPolicy": "Use only the explicitly selected reviewed series, never the series with greatest coverage."
+      },
+      "status": "available"
+    },
+    "writing": {
+      "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+      "comparisonId": "writing:ai-writing-benchmark",
+      "coverage": {
+        "catalogModelCount": 44,
+        "measuredModelCount": 38,
+        "measuredModelKeys": [
+          "alibaba/qwen3.7-plus",
+          "alibaba/qwen3.8-flash",
+          "alibaba/qwen3.8-max",
+          "anthropic/claude-haiku-5-5",
+          "anthropic/claude-opus-4-8",
+          "anthropic/claude-opus-5",
+          "anthropic/claude-opus-5-5",
+          "anthropic/claude-sonnet-5",
+          "anthropic/claude-sonnet-5-5",
+          "deepseek/deepseek-v4-pro",
+          "deepseek/deepseek-v4.1-flash",
+          "google/gemini-3.8-flash",
+          "google/gemini-4-argon",
+          "meta/muse-spark-1.2",
+          "meta/muse-spark-1.3",
+          "minimax/MiniMax-M3",
+          "minimax/MiniMax-M3.1-Flash",
+          "moonshotai/kimi-k3",
+          "moonshotai/kimi-k3.1-pro",
+          "openai/gpt-5.6-luna",
+          "openai/gpt-5.6-sol",
+          "openai/gpt-6-luna",
+          "openai/gpt-6-sol",
+          "openai/gpt-6.1-sol",
+          "openai/gpt-6.1-terra",
+          "reflection/beam-1.0-501b-a23b",
+          "stepfun/step-5-preview",
+          "tencent/hy3",
+          "tencent/hy4-preview",
+          "xai/grok-4.6",
+          "xai/grok-4.7",
+          "xiaomi/mimo-v2.5",
+          "xiaomi/mimo-v2.5-pro",
+          "xiaomi/mimo-v2.6-flash",
+          "xiaomi/mimo-v2.6-pro",
+          "zhipuai/glm-5.2",
+          "zhipuai/glm-5.3",
+          "zhipuai/glm-5.3-flash"
+        ],
+        "missingModelCount": 6,
+        "missingModelKeys": [
+          "anthropic/claude-haiku-4-5",
+          "meituan/longcat-2.0",
+          "meituan/longcat-2.5-preview",
+          "microsoft/mai-code-1.1-flash",
+          "moonshotai/kimi-k2.7-code",
+          "openai/gpt-5.3-codex"
+        ]
+      },
+      "evaluationConditions": {
+        "comparison": "blind pairwise responses to shared prompts",
+        "judging": "AI judges; judge set varies by model pair",
+        "language": "English",
+        "perMeasurement": [
+          "reasoningEffort",
+          "quantization"
+        ],
+        "selfPreferencePossible": true
+      },
+      "label": "Writing",
+      "limitations": [
+        "AI-judge preference is not human evaluation or objective writing quality.",
+        "Reasoning effort and quantization can differ by model.",
+        "Judges cover different model pairs and may evaluate themselves. Self-preference is possible.",
+        "Published intervals do not establish a decisive rank difference or production-route performance."
+      ],
+      "measurementLabel": "AI Writing Benchmark \u2014 AI-judge preference",
+      "methodology": "Use the source regularized Bradley-Terry AI-judge score from one snapshot. A score of 50 estimates a one-in-two chance of beating the average model in English. It is not a percentage.",
+      "missingValuePolicy": "Null is unavailable, never zero. No substitution from another series, benchmark, effort, or model.",
+      "orderedModelKeys": [
+        "openai/gpt-6.1-sol",
+        "anthropic/claude-opus-5-5",
+        "moonshotai/kimi-k3.1-pro",
+        "moonshotai/kimi-k3",
+        "anthropic/claude-sonnet-5-5",
+        "openai/gpt-6-sol",
+        "anthropic/claude-opus-5",
+        "zhipuai/glm-5.3",
+        "anthropic/claude-opus-4-8",
+        "xai/grok-4.7",
+        "openai/gpt-6.1-terra",
+        "anthropic/claude-sonnet-5",
+        "openai/gpt-5.6-sol",
+        "zhipuai/glm-5.3-flash",
+        "openai/gpt-6-luna",
+        "meta/muse-spark-1.3",
+        "deepseek/deepseek-v4.1-flash",
+        "minimax/MiniMax-M3",
+        "meta/muse-spark-1.2",
+        "stepfun/step-5-preview",
+        "google/gemini-3.8-flash",
+        "xiaomi/mimo-v2.6-pro",
+        "zhipuai/glm-5.2",
+        "tencent/hy3",
+        "alibaba/qwen3.8-max",
+        "reflection/beam-1.0-501b-a23b",
+        "anthropic/claude-haiku-5-5",
+        "tencent/hy4-preview",
+        "xai/grok-4.6",
+        "google/gemini-4-argon",
+        "openai/gpt-5.6-luna",
+        "deepseek/deepseek-v4-pro",
+        "alibaba/qwen3.8-flash",
+        "alibaba/qwen3.7-plus",
+        "xiaomi/mimo-v2.6-flash",
+        "xiaomi/mimo-v2.5-pro",
+        "xiaomi/mimo-v2.5",
+        "minimax/MiniMax-M3.1-Flash"
+      ],
+      "orderingPolicy": "Descending supplied score. Equal scores tie; modelKey orders ties for display only. Numerical order does not establish statistical significance.",
+      "results": [
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "alibaba/qwen3.7-plus",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2561,
+                "coverageComparisons": 2662,
+                "losses": 1262,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 60,
+                "publishedScoreInterval": [
+                  46.5,
+                  51
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 48.8,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 104,
+                "wins": 1195
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "alibaba",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "qwen3.7",
+            "sourceModelId": "clinepass-qwen3.7-plus::enabled",
+            "sourceName": "Qwen3.7 Plus"
+          },
+          "quantization": "not_disclosed",
+          "score": 48.8,
+          "sourceRecordIds": [
+            "clinepass-qwen3.7-plus::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              46.5,
+              51
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "alibaba/qwen3.8-flash",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2448,
+                "coverageComparisons": 2480,
+                "losses": 1114,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 55,
+                "publishedScoreInterval": [
+                  49.2,
+                  53.8
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 51.5,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 72,
+                "wins": 1262
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "alibaba",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "qwen3.8-flash",
+            "sourceModelId": "qwen3.8-flash::enabled",
+            "sourceName": "Qwen3.8 Flash"
+          },
+          "quantization": "not_disclosed",
+          "score": 51.5,
+          "sourceRecordIds": [
+            "qwen3.8-flash::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              49.2,
+              53.8
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "xhigh",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "alibaba/qwen3.8-max",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "xhigh"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2466,
+                "coverageComparisons": 2498,
+                "losses": 706,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 31,
+                "publishedScoreInterval": [
+                  69.4,
+                  73.4
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 71.5,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 165,
+                "wins": 1595
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "alibaba",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "xhigh",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "qwen3.8-max",
+            "sourceModelId": "qwen3.8-max-xhigh::enabled",
+            "sourceName": "Qwen3.8 Max"
+          },
+          "quantization": "not_disclosed",
+          "score": 71.5,
+          "sourceRecordIds": [
+            "qwen3.8-max-xhigh::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              69.4,
+              73.4
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "anthropic/claude-haiku-4-5",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No matched AI Writing Benchmark AI-judge score in the configured snapshot. EQ-Bench and human scores are not fallbacks.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "adaptive high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "anthropic/claude-haiku-5-5",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "adaptive high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1318,
+                "coverageComparisons": 1318,
+                "losses": 414,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 34,
+                "publishedScoreInterval": [
+                  66.4,
+                  72
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 69.3,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 17,
+                "wins": 887
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "anthropic",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "adaptive high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "claude-haiku-5.5",
+            "sourceModelId": "claude-haiku-5.5-high::enabled",
+            "sourceName": "Claude Haiku 5.5"
+          },
+          "quantization": "not_disclosed",
+          "score": 69.3,
+          "sourceRecordIds": [
+            "claude-haiku-5.5-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              66.4,
+              72
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "adaptive high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "anthropic/claude-opus-4-8",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "adaptive high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 823,
+                "coverageComparisons": 887,
+                "losses": 108,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 12,
+                "publishedScoreInterval": [
+                  84.4,
+                  89.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 86.9,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 28,
+                "wins": 687
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "anthropic",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "adaptive high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "claude-opus-4-8",
+            "sourceModelId": "claude-opus-4-8-high::enabled",
+            "sourceName": "Claude Opus 4.8"
+          },
+          "quantization": "not_disclosed",
+          "score": 86.9,
+          "sourceRecordIds": [
+            "claude-opus-4-8-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              84.4,
+              89.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "adaptive high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "anthropic/claude-opus-5",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "adaptive high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1278,
+                "coverageComparisons": 2243,
+                "losses": 198,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 10,
+                "publishedScoreInterval": [
+                  85.4,
+                  89
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 87.3,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 12,
+                "wins": 1068
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "anthropic",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "adaptive high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "claude-opus-5",
+            "sourceModelId": "claude-opus-5-high::enabled",
+            "sourceName": "Claude Opus 5"
+          },
+          "quantization": "not_disclosed",
+          "score": 87.3,
+          "sourceRecordIds": [
+            "claude-opus-5-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              85.4,
+              89
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "adaptive high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "anthropic/claude-opus-5-5",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "adaptive high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1786,
+                "coverageComparisons": 2495,
+                "losses": 153,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 2,
+                "publishedScoreInterval": [
+                  91.9,
+                  94.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 93.1,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 22,
+                "wins": 1611
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "anthropic",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "adaptive high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "claude-opus-5.5",
+            "sourceModelId": "claude-opus-5.5-high::enabled",
+            "sourceName": "Claude Opus 5.5"
+          },
+          "quantization": "not_disclosed",
+          "score": 93.1,
+          "sourceRecordIds": [
+            "claude-opus-5.5-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              91.9,
+              94.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "adaptive high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "anthropic/claude-sonnet-5",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "adaptive high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2194,
+                "coverageComparisons": 2234,
+                "losses": 372,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 15,
+                "publishedScoreInterval": [
+                  82.3,
+                  85.5
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 84,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 81,
+                "wins": 1741
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "anthropic",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "adaptive high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "claude-sonnet-5",
+            "sourceModelId": "claude-sonnet-5-high::enabled",
+            "sourceName": "Claude Sonnet 5"
+          },
+          "quantization": "not_disclosed",
+          "score": 84,
+          "sourceRecordIds": [
+            "claude-sonnet-5-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              82.3,
+              85.5
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "adaptive high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "anthropic/claude-sonnet-5-5",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "adaptive high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2913,
+                "coverageComparisons": 2932,
+                "losses": 392,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 6,
+                "publishedScoreInterval": [
+                  87.9,
+                  90.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 89,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 33,
+                "wins": 2488
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "anthropic",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "adaptive high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "claude-sonnet-5.5",
+            "sourceModelId": "claude-sonnet-5.5-high::enabled",
+            "sourceName": "Claude Sonnet 5.5"
+          },
+          "quantization": "not_disclosed",
+          "score": 89,
+          "sourceRecordIds": [
+            "claude-sonnet-5.5-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              87.9,
+              90.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "deepseek/deepseek-v4-pro",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2863,
+                "coverageComparisons": 2964,
+                "losses": 1186,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 45,
+                "publishedScoreInterval": [
+                  55.9,
+                  60
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 58,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 68,
+                "wins": 1609
+              }
+            },
+            "parameterBillions": 1600,
+            "publisherKey": "deepseek",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "deepseek-v4",
+            "sourceModelId": "clinepass-deepseek-v4-pro::enabled",
+            "sourceName": "DeepSeek V4 Pro"
+          },
+          "quantization": "not_disclosed",
+          "score": 58,
+          "sourceRecordIds": [
+            "clinepass-deepseek-v4-pro::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              55.9,
+              60
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "deepseek/deepseek-v4.1-flash",
+          "provenance": {
+            "activeParameterBillions": 16,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2470,
+                "coverageComparisons": 2510,
+                "losses": 616,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 21,
+                "publishedScoreInterval": [
+                  75.9,
+                  79.4
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 77.7,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 120,
+                "wins": 1734
+              }
+            },
+            "parameterBillions": 552,
+            "publisherKey": "deepseek",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "deepseek-v4.1-flash",
+            "sourceModelId": "deepseek-v4.1-flash-high::enabled",
+            "sourceName": "DeepSeek V4.1 Flash"
+          },
+          "quantization": "not_disclosed",
+          "score": 77.7,
+          "sourceRecordIds": [
+            "deepseek-v4.1-flash-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              75.9,
+              79.4
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "google/gemini-3.8-flash",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2509,
+                "coverageComparisons": 2549,
+                "losses": 664,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 26,
+                "publishedScoreInterval": [
+                  73.7,
+                  77.3
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 75.6,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 138,
+                "wins": 1707
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "google",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gemini-3.8-flash",
+            "sourceModelId": "gemini-3.8-flash-high::enabled",
+            "sourceName": "Gemini 3.8 Flash"
+          },
+          "quantization": "not_disclosed",
+          "score": 75.6,
+          "sourceRecordIds": [
+            "gemini-3.8-flash-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              73.7,
+              77.3
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "google/gemini-4-argon",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1315,
+                "coverageComparisons": 1315,
+                "losses": 446,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 41,
+                "publishedScoreInterval": [
+                  63,
+                  68.8
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 66,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 13,
+                "wins": 856
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "google",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gemini-4-argon",
+            "sourceModelId": "gemini-4-argon-high::enabled",
+            "sourceName": "Gemini 4 Argon"
+          },
+          "quantization": "not_disclosed",
+          "score": 66,
+          "sourceRecordIds": [
+            "gemini-4-argon-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              63,
+              68.8
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "meituan/longcat-2.0",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No matched AI Writing Benchmark AI-judge score in the configured snapshot. EQ-Bench and human scores are not fallbacks.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "meituan/longcat-2.5-preview",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No matched AI Writing Benchmark AI-judge score in the configured snapshot. EQ-Bench and human scores are not fallbacks.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "meta/muse-spark-1.2",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 570,
+                "coverageComparisons": 577,
+                "losses": 107,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 23,
+                "publishedScoreInterval": [
+                  72.3,
+                  80.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 76.4,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 37,
+                "wins": 426
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "meta",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "muse-spark-1.2",
+            "sourceModelId": "muse-spark-1.2-high::enabled",
+            "sourceName": "Muse Spark 1.2"
+          },
+          "quantization": "not_disclosed",
+          "score": 76.4,
+          "sourceRecordIds": [
+            "muse-spark-1.2-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              72.3,
+              80.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "meta/muse-spark-1.3",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2231,
+                "coverageComparisons": 2568,
+                "losses": 557,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 20,
+                "publishedScoreInterval": [
+                  76.5,
+                  80.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 78.4,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 94,
+                "wins": 1580
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "meta",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "muse-spark-1.3",
+            "sourceModelId": "muse-spark-1.3-contributor-high::enabled",
+            "sourceName": "Muse Spark 1.3"
+          },
+          "quantization": "not_disclosed",
+          "score": 78.4,
+          "sourceRecordIds": [
+            "muse-spark-1.3-contributor-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              76.5,
+              80.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "microsoft/mai-code-1.1-flash",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No matched AI Writing Benchmark AI-judge score in the configured snapshot. EQ-Bench and human scores are not fallbacks.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "minimax/MiniMax-M3",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2834,
+                "coverageComparisons": 2944,
+                "losses": 764,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 22,
+                "publishedScoreInterval": [
+                  75.7,
+                  79
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 77.4,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 58,
+                "wins": 2012
+              }
+            },
+            "parameterBillions": 428,
+            "publisherKey": "minimax",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "minimax-m3",
+            "sourceModelId": "clinepass-minimax-m3::enabled",
+            "sourceName": "MiniMax M3"
+          },
+          "quantization": "not_disclosed",
+          "score": 77.4,
+          "sourceRecordIds": [
+            "clinepass-minimax-m3::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              75.7,
+              79
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "minimax/MiniMax-M3.1-Flash",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 963,
+                "coverageComparisons": 963,
+                "losses": 641,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 80,
+                "publishedScoreInterval": [
+                  28.8,
+                  35.6
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 32.1,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 18,
+                "wins": 304
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "minimax",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "minimax-m3.1-flash",
+            "sourceModelId": "minimax-m3.1-flash-high::enabled",
+            "sourceName": "MiniMax M3.1 Flash"
+          },
+          "quantization": "not_disclosed",
+          "score": 32.1,
+          "sourceRecordIds": [
+            "minimax-m3.1-flash-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              28.8,
+              35.6
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "moonshotai/kimi-k2.7-code",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No matched AI Writing Benchmark AI-judge score in the configured snapshot. EQ-Bench and human scores are not fallbacks.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "moonshotai/kimi-k3",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2686,
+                "coverageComparisons": 2775,
+                "losses": 337,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 5,
+                "publishedScoreInterval": [
+                  90.1,
+                  92
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 91.1,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 62,
+                "wins": 2287
+              }
+            },
+            "parameterBillions": 2800,
+            "publisherKey": "moonshot-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "kimi-k3",
+            "sourceModelId": "clinepass-kimi-k3::enabled",
+            "sourceName": "Kimi K3"
+          },
+          "quantization": "not_disclosed",
+          "score": 91.1,
+          "sourceRecordIds": [
+            "clinepass-kimi-k3::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              90.1,
+              92
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "moonshotai/kimi-k3.1-pro",
+          "provenance": {
+            "activeParameterBillions": 104,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 776,
+                "coverageComparisons": 776,
+                "losses": 58,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 3,
+                "publishedScoreInterval": [
+                  89.9,
+                  93.5
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 91.9,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 55,
+                "wins": 663
+              }
+            },
+            "parameterBillions": 2800,
+            "publisherKey": "moonshot-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "kimi-k3.1-pro",
+            "sourceModelId": "kimi-k3.1-pro-high::enabled",
+            "sourceName": "Kimi K3.1 Pro"
+          },
+          "quantization": "not_disclosed",
+          "score": 91.9,
+          "sourceRecordIds": [
+            "kimi-k3.1-pro-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              89.9,
+              93.5
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": null,
+          "effort": null,
+          "modelKey": "openai/gpt-5.3-codex",
+          "provenance": null,
+          "score": null,
+          "sourceRecordIds": [],
+          "unavailableReason": "No matched AI Writing Benchmark AI-judge score in the configured snapshot. EQ-Bench and human scores are not fallbacks.",
+          "uncertainty": null
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "openai/gpt-5.6-luna",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2102,
+                "coverageComparisons": 2174,
+                "losses": 756,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 44,
+                "publishedScoreInterval": [
+                  55.8,
+                  60.7
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 58.3,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 95,
+                "wins": 1251
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "openai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gpt-5.6-luna",
+            "sourceModelId": "gpt-5.6-luna-high::enabled",
+            "sourceName": "GPT-5.6 Luna"
+          },
+          "quantization": "not_disclosed",
+          "score": 58.3,
+          "sourceRecordIds": [
+            "gpt-5.6-luna-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              55.8,
+              60.7
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "openai/gpt-5.6-sol",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1508,
+                "coverageComparisons": 2609,
+                "losses": 297,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 17,
+                "publishedScoreInterval": [
+                  76.9,
+                  81.4
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 79.2,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 102,
+                "wins": 1109
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "openai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gpt-5.6-sol",
+            "sourceModelId": "gpt-5.6-sol-high::enabled",
+            "sourceName": "GPT-5.6 Sol"
+          },
+          "quantization": "not_disclosed",
+          "score": 79.2,
+          "sourceRecordIds": [
+            "gpt-5.6-sol-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              76.9,
+              81.4
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "openai/gpt-6-luna",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 3034,
+                "coverageComparisons": 3053,
+                "losses": 689,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 19,
+                "publishedScoreInterval": [
+                  77.4,
+                  80.5
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 79,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 64,
+                "wins": 2281
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "openai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gpt-6-luna",
+            "sourceModelId": "gpt-6-luna-high::enabled",
+            "sourceName": "GPT-6 Luna"
+          },
+          "quantization": "not_disclosed",
+          "score": 79,
+          "sourceRecordIds": [
+            "gpt-6-luna-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              77.4,
+              80.5
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "openai/gpt-6-sol",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1577,
+                "coverageComparisons": 2032,
+                "losses": 216,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 9,
+                "publishedScoreInterval": [
+                  85.8,
+                  89.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 87.5,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 39,
+                "wins": 1322
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "openai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gpt-6-sol",
+            "sourceModelId": "gpt-6-sol-high::enabled",
+            "sourceName": "GPT-6 Sol"
+          },
+          "quantization": "not_disclosed",
+          "score": 87.5,
+          "sourceRecordIds": [
+            "gpt-6-sol-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              85.8,
+              89.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "openai/gpt-6.1-sol",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2716,
+                "coverageComparisons": 2735,
+                "losses": 144,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 1,
+                "publishedScoreInterval": [
+                  94.6,
+                  96
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 95.3,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 75,
+                "wins": 2497
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "openai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gpt-6.1-sol",
+            "sourceModelId": "gpt-6.1-sol-high::enabled",
+            "sourceName": "GPT-6.1 Sol"
+          },
+          "quantization": "not_disclosed",
+          "score": 95.3,
+          "sourceRecordIds": [
+            "gpt-6.1-sol-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              94.6,
+              96
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "openai/gpt-6.1-terra",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1059,
+                "coverageComparisons": 1059,
+                "losses": 168,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 14,
+                "publishedScoreInterval": [
+                  82.5,
+                  87
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 84.9,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 58,
+                "wins": 833
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "openai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "gpt-6.1-terra",
+            "sourceModelId": "gpt-6.1-terra-high::enabled",
+            "sourceName": "GPT-6.1 Terra"
+          },
+          "quantization": "not_disclosed",
+          "score": 84.9,
+          "sourceRecordIds": [
+            "gpt-6.1-terra-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              82.5,
+              87
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "reflection/beam-1.0-501b-a23b",
+          "provenance": {
+            "activeParameterBillions": 23,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1308,
+                "coverageComparisons": 1308,
+                "losses": 398,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 33,
+                "publishedScoreInterval": [
+                  67.2,
+                  72.8
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 70.1,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 26,
+                "wins": 884
+              }
+            },
+            "parameterBillions": 501,
+            "publisherKey": "reflection",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "beam-1.0",
+            "sourceModelId": "beam-1.0-high::enabled",
+            "sourceName": "Beam 1.0"
+          },
+          "quantization": "not_disclosed",
+          "score": 70.1,
+          "sourceRecordIds": [
+            "beam-1.0-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              67.2,
+              72.8
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "stepfun/step-5-preview",
+          "provenance": {
+            "activeParameterBillions": 27,
+            "evaluationConditions": {
+              "quantization": "fp8",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1323,
+                "coverageComparisons": 1323,
+                "losses": 338,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 24,
+                "publishedScoreInterval": [
+                  73.4,
+                  78.5
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 76,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 30,
+                "wins": 955
+              }
+            },
+            "parameterBillions": 600,
+            "publisherKey": "stepfun",
+            "quantization": "fp8",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "step-5-preview",
+            "sourceModelId": "step-5-preview-high::enabled",
+            "sourceName": "Step 5 Preview fp8"
+          },
+          "quantization": "fp8",
+          "score": 76,
+          "sourceRecordIds": [
+            "step-5-preview-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              73.4,
+              78.5
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "tencent/hy3",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2478,
+                "coverageComparisons": 2518,
+                "losses": 679,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 29,
+                "publishedScoreInterval": [
+                  72.5,
+                  76.2
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 74.4,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 116,
+                "wins": 1683
+              }
+            },
+            "parameterBillions": 295,
+            "publisherKey": "tencent",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "hy3",
+            "sourceModelId": "hy3-high-free::enabled",
+            "sourceName": "Hy3"
+          },
+          "quantization": "not_disclosed",
+          "score": 74.4,
+          "sourceRecordIds": [
+            "hy3-high-free::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              72.5,
+              76.2
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "tencent/hy4-preview",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2443,
+                "coverageComparisons": 2475,
+                "losses": 769,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 35,
+                "publishedScoreInterval": [
+                  67,
+                  71.2
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 69.1,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 114,
+                "wins": 1560
+              }
+            },
+            "parameterBillions": 770,
+            "publisherKey": "tencent",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "hy4",
+            "sourceModelId": "hy4-preview::enabled",
+            "sourceName": "Hy4 Preview"
+          },
+          "quantization": "not_disclosed",
+          "score": 69.1,
+          "sourceRecordIds": [
+            "hy4-preview::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              67,
+              71.2
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "xai/grok-4.6",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 1925,
+                "coverageComparisons": 1948,
+                "losses": 561,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 40,
+                "publishedScoreInterval": [
+                  64.9,
+                  69.8
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 67.4,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 51,
+                "wins": 1313
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "x-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "grok-4.6",
+            "sourceModelId": "grok-4.6-high::enabled",
+            "sourceName": "Grok 4.6"
+          },
+          "quantization": "not_disclosed",
+          "score": 67.4,
+          "sourceRecordIds": [
+            "grok-4.6-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              64.9,
+              69.8
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "xai/grok-4.7",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 3204,
+                "coverageComparisons": 3227,
+                "losses": 510,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 13,
+                "publishedScoreInterval": [
+                  84.7,
+                  87.1
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 85.9,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 78,
+                "wins": 2616
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "x-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "grok-4.7",
+            "sourceModelId": "grok-4.7-high::enabled",
+            "sourceName": "Grok 4.7"
+          },
+          "quantization": "not_disclosed",
+          "score": 85.9,
+          "sourceRecordIds": [
+            "grok-4.7-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              84.7,
+              87.1
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "xiaomi/mimo-v2.5",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2559,
+                "coverageComparisons": 2660,
+                "losses": 1442,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 70,
+                "publishedScoreInterval": [
+                  38.2,
+                  42.5
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 40.3,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 76,
+                "wins": 1041
+              }
+            },
+            "parameterBillions": 310,
+            "publisherKey": "xiaomi",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "mimo-v2.5",
+            "sourceModelId": "clinepass-mimo-v2.5::enabled",
+            "sourceName": "MiMo V2.5"
+          },
+          "quantization": "not_disclosed",
+          "score": 40.3,
+          "sourceRecordIds": [
+            "clinepass-mimo-v2.5::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              38.2,
+              42.5
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "xiaomi/mimo-v2.5-pro",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2558,
+                "coverageComparisons": 2659,
+                "losses": 1382,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 64,
+                "publishedScoreInterval": [
+                  41,
+                  45.4
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 43.2,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 86,
+                "wins": 1090
+              }
+            },
+            "parameterBillions": 1020,
+            "publisherKey": "xiaomi",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "mimo-v2.5",
+            "sourceModelId": "clinepass-mimo-v2.5-pro::enabled",
+            "sourceName": "MiMo V2.5 Pro"
+          },
+          "quantization": "not_disclosed",
+          "score": 43.2,
+          "sourceRecordIds": [
+            "clinepass-mimo-v2.5-pro::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              41,
+              45.4
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "xiaomi/mimo-v2.6-flash",
+          "provenance": {
+            "activeParameterBillions": 15,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 3075,
+                "coverageComparisons": 3097,
+                "losses": 1444,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 61,
+                "publishedScoreInterval": [
+                  45.9,
+                  50
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 47.9,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 56,
+                "wins": 1575
+              }
+            },
+            "parameterBillions": 309,
+            "publisherKey": "xiaomi",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "mimo-v2.6-flash",
+            "sourceModelId": "mimo-v2.6-flash-high::enabled",
+            "sourceName": "MiMo V2.6 Flash"
+          },
+          "quantization": "not_disclosed",
+          "score": 47.9,
+          "sourceRecordIds": [
+            "mimo-v2.6-flash-high::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              45.9,
+              50
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "xiaomi/mimo-v2.6-pro",
+          "provenance": {
+            "activeParameterBillions": 42,
+            "evaluationConditions": {
+              "quantization": "fp8",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 3207,
+                "coverageComparisons": 3230,
+                "losses": 814,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 26,
+                "publishedScoreInterval": [
+                  73.9,
+                  77.2
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 75.6,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 42,
+                "wins": 2351
+              }
+            },
+            "parameterBillions": 1020,
+            "publisherKey": "xiaomi",
+            "quantization": "fp8",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "mimo-v2.6-pro",
+            "sourceModelId": "mimo-v2.6-pro::enabled",
+            "sourceName": "MiMo V2.6 Pro fp8"
+          },
+          "quantization": "fp8",
+          "score": 75.6,
+          "sourceRecordIds": [
+            "mimo-v2.6-pro::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              73.9,
+              77.2
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "enabled",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "zhipuai/glm-5.2",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "enabled"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2745,
+                "coverageComparisons": 2846,
+                "losses": 763,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 28,
+                "publishedScoreInterval": [
+                  73.2,
+                  76.8
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 75,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 80,
+                "wins": 1902
+              }
+            },
+            "parameterBillions": 744,
+            "publisherKey": "z-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "enabled",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "glm-5.2",
+            "sourceModelId": "clinepass-glm-5.2::enabled",
+            "sourceName": "GLM 5.2"
+          },
+          "quantization": "not_disclosed",
+          "score": 75,
+          "sourceRecordIds": [
+            "clinepass-glm-5.2::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              73.2,
+              76.8
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "max",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "zhipuai/glm-5.3",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "max"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2492,
+                "coverageComparisons": 2532,
+                "losses": 384,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 10,
+                "publishedScoreInterval": [
+                  86,
+                  88.5
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 87.3,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 123,
+                "wins": 1985
+              }
+            },
+            "parameterBillions": 744,
+            "publisherKey": "z-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "max",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "glm-5.3",
+            "sourceModelId": "glm-5.3-max::enabled",
+            "sourceName": "GLM 5.3"
+          },
+          "quantization": "not_disclosed",
+          "score": 87.3,
+          "sourceRecordIds": [
+            "glm-5.3-max::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              86,
+              88.5
+            ]
+          }
+        },
+        {
+          "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+          "effort": "high",
+          "humanMeasurement": {
+            "available": false,
+            "comparisonGroupId": null,
+            "comparisons": 0,
+            "score": null
+          },
+          "modelKey": "zhipuai/glm-5.3-flash",
+          "provenance": {
+            "activeParameterBillions": null,
+            "evaluationConditions": {
+              "quantization": "not_disclosed",
+              "reasoningEffort": "high"
+            },
+            "humanMeasurement": {
+              "available": false,
+              "comparisonGroupId": null,
+              "comparisons": 0,
+              "score": null
+            },
+            "metrics": {
+              "duelScore100": {
+                "comparisonGroupId": "writing:ai-writing-benchmark:duel_score_100:sha256:2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",
+                "comparisons": 2498,
+                "coverageComparisons": 2538,
+                "losses": 606,
+                "measure": "AI Writing Benchmark regularized Bradley-Terry AI-judge score",
+                "publishedRank": 17,
+                "publishedScoreInterval": [
+                  77.5,
+                  80.9
+                ],
+                "scaleId": "ai-writing-benchmark-duel-score-100",
+                "score": 79.2,
+                "scoreScale": "50 is an estimated one-in-two chance of beating the average model in English. This is not a percentage.",
+                "ties": 80,
+                "wins": 1812
+              }
+            },
+            "parameterBillions": null,
+            "publisherKey": "z-ai",
+            "quantization": "not_disclosed",
+            "reasoningEffort": "high",
+            "source": "ai-writing-benchmark",
+            "sourceFamily": "glm-5.3-flash",
+            "sourceModelId": "glm-5.3-flash::enabled",
+            "sourceName": "GLM 5.3 Flash"
+          },
+          "quantization": "not_disclosed",
+          "score": 79.2,
+          "sourceRecordIds": [
+            "glm-5.3-flash::enabled"
+          ],
+          "unavailableReason": null,
+          "uncertainty": {
+            "interpretation": "Source-published score interval. Coverage level and method are not established by this export.",
+            "publishedScoreInterval": [
+              77.5,
+              80.9
+            ]
+          }
+        }
+      ],
+      "scale": {
+        "id": "ai-writing-benchmark-duel-score-100",
+        "label": "Regularized Bradley-Terry AI-judge score; 50 is an estimated one-in-two chance of beating the average model; not a percentage",
+        "maximum": 100,
+        "minimum": 0
+      },
+      "scoreDirection": "higher-is-better",
+      "selectionPolicy": {
+        "aggregation": "None. Do not combine AI-judge, human, or EQ-Bench scores.",
+        "effortPolicy": "Use the exact source record selected by reviewed identity matching. Preserve its effort and quantization. Do not select maximum score or map to Pi effort.",
+        "replacementPolicy": "Changing the benchmark or selection policy requires an explicit producer methodology review and contract revision.",
+        "seriesPolicy": "AI Writing Benchmark duel_score_100 only."
+      },
+      "status": "available"
+    }
+  },
+  "consumerContractRevision": "consumer-comparisons-1",
   "counts": {
     "models": 44,
     "routes": 52,
     "unresolvedRoutes": 1
   },
-  "generatedAt": "2026-11-05T14:00:54.349779+00:00",
+  "deferredDomains": [
+    "general",
+    "vision"
+  ],
+  "generatedAt": "2026-11-06T06:12:19.616643+00:00",
   "generator": {
     "files": {
-      "build_summary.py": "9c13ab12eca44abea4d6f045c18ec369b5b249a7763059a8f70cb782339d5807",
+      "build_summary.py": "dac994a83550151ae9c056577f16221fd3a6e59cd475fbf53e6dec658d0a1489",
+      "consumer_comparisons.py": "b86b723c2387189809bcacbe9c9b99b6a0c551c7cf422a288bac1aebe5ca143b",
       "identity.py": "84f9c5c0821a22cab53195bb7f53f8f64b9372ac491d602190b8388a9b588428"
     },
     "name": "model-info"
@@ -40791,12 +44065,12 @@
   },
   "sources": {
     "data/coding-comparisons.json": {
-      "sha256": "096b87f07aecc8de786c95ebdc37350830f2fe0c2d2f529ff8f983d17daa0f7c",
-      "snapshotModifiedAt": "2026-11-05T13:59:41.054074+00:00"
+      "sha256": "7c3baed38637878cedfb19701a92e03a491bbe03ab3642a5a8ed6bfe7e5e09a9",
+      "snapshotModifiedAt": "2026-11-06T05:54:34.494253+00:00"
     },
     "data/mappings.json": {
-      "sha256": "98d824d9d5cd7f55ee91914f331748df210c2f973ba5ee12c018a273e5315e5c",
-      "snapshotModifiedAt": "2026-11-05T02:10:29.682236+00:00"
+      "sha256": "2a9e7c0e9dbfc7ea7da1bd95d796f03c8cf0d2ffada78c05f5d70dd72aa452e2",
+      "snapshotModifiedAt": "2026-11-05T15:01:42.932906+00:00"
     },
     "data/sources/ai-writing-benchmark.json": {
       "sha256": "2035deda72750ec9c6da4546d7cf5ba5ed68b24ea92398588f0c7056fbbef7fa",

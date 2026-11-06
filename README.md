@@ -59,28 +59,33 @@ The picker supports Pi's configured selection keybindings. Ctrl+S is a fixed pic
 | Sort | Value | Source |
 |------|-------|--------|
 | Name | Provider/model ID | Live Pi registry |
-| Coding | DeepSWE 1.1 score, 0–1 | Maximum published effort, vendor-reported |
+| Coding index | AA coding index, normalized to 0–1 | OpenRouter-mirrored AA index |
+| DeepSWE max effort | DeepSWE 1.1, 0–1 fraction | Vendor maximum published effort |
 | Writing | Bradley-Terry score, 0–100, not a percentage | AI Writing Benchmark (AI-judged) |
 
-Numeric sorts descend and place unknown values last. Scores use different scales and are not a composite rating. Coding uses only the artifact's `deepswe-1.1-max-published-effort` comparison series. It is not a general coding ranking. Maximum effort does not imply equal compute, and evaluation protocols are not independently verified. The picker shows a short qualification beside the controls.
+Numeric sorts descend and place unavailable values last. Equal scores tie. Numeric order does not establish statistical significance. Scores use different scales and are not a composite rating.
 
-Writing uses only AI Writing Benchmark scores. These scores reflect AI-judge preferences, not human ratings. The value 50 estimates an even chance against the average model in English. It is not a percentage. Missing scores remain unknown, even when EQ-Bench Elo exists in the bundle.
+The Coding index sort uses the bundled canonical `coding.value` AA index. It provides broader coverage without mixing benchmarks. Its normalization does not make it comparable to DeepSWE. Source variants and effort can differ. The evidence view identifies the index source and comparison group.
 
-Each row shows Coding and Writing scores, regardless of the active sort. Missing values show `n/a`. The bottom panel shows only context limits, output limits, reasoning support, and image input.
+DeepSWE max effort uses the producer-selected `consumerComparisons.coding` result. DeepSWE 1.1 covers 3 of 44 canonical models: Claude Opus 5.5 (0.742), GPT-6.1 Sol (0.719), and GPT-6 Luna (0.6659). This is a conditional benchmark-specific comparison, not overall coding ability. Vendor protocols are not verified equivalent. Maximum published effort does not imply equal compute. Comparable uncertainty intervals are unavailable. Sol's higher high-effort result does not replace its selected max-effort score. The publisher's 15-model series and AA index remain separate evidence, never fallbacks. Rows round Coding to four decimal places. Sorting and evidence retain exact values.
 
-The sort menu always contains Name, Coding, and Writing. Scope changes preserve the selected sort. Individual benchmark groups and intelligence are not main-menu choices.
+Writing uses the producer-selected `consumerComparisons.writing` result from the AI Writing Benchmark, covering 38 of 44 canonical models. These scores reflect AI-judge preferences, not human ratings. The value 50 estimates an even chance against the average model in English. It is not a percentage. Missing scores remain unknown, even when EQ-Bench Elo exists in the bundle.
+
+Each row shows AA, DeepSWE, and Writing scores, regardless of the active sort. Missing values show `n/a`. The bottom panel shows only context limits, output limits, reasoning support, and image input.
+
+The sort menu always contains Name, Coding index, DeepSWE max effort, and Writing. Scope changes preserve the selected sort. Individual benchmark groups and intelligence are not main-menu choices.
 
 Effort, quantization, and evaluation conditions can differ between models. Use Ctrl+E for source details, variants, and missing-score explanations.
 
 ## How it works
 
-The extension reads `extensions/model-info/summary.json` when the picker opens. This is an unchanged snapshot of `datfinesoul/model-info`'s existing `data/summary.json`. `snapshot.json` records the source revision, path, SHA-256 hash, and generator hashes. It explicitly marks snapshots generated from uncommitted source changes. The summary records input hashes, so a Git revision alone is not the provenance claim. The bundled generation timestamp appears in the picker.
+The extension reads `extensions/model-info/summary.json` when the picker opens. Its `consumer-comparisons-1` contract supplies both domain comparisons and their selection policies. The bundled `measurement-contract.json` retains detailed evidence but is not required at runtime. Both artifacts are unchanged copies from `datfinesoul/model-info/data/`. Tests check agreement between their complete `consumerComparisons` objects. The evidence artifact's `series` array does not define the sort menu. `snapshot.json` records the source revision, path, SHA-256 hash, and generator hashes. It explicitly marks snapshots generated from uncommitted source changes. The summary records input hashes, so a Git revision alone is not the provenance claim. The bundled generation timestamp appears in the picker.
 
 Pi's live registry determines availability, context limits, reasoning support, and image input. The picker starts with session-scoped models when a scope exists. Tab switches between scoped and all available models without changing the search. It preserves the selected sort even when the new scope has no scores for it. Without a scope, it shows all available models and Tab has no effect. The schema `1.0.0` summary maps each exact provider/model route to a canonical model. Verified routes share that model's benchmark record, including Luna through OpenCode and Copilot. No runtime alias guessing occurs. Models without benchmark data remain selectable. The bundle covers 52 routes and 44 canonical models. One route has an unresolved identity.
 
-The evidence view shows individual ZeroEval coding results, reporting and verification flags, evaluation conditions, comparison groups, and source links. These results never become a composite coding sort. It also shows the selected DeepSWE result, its limitations, writing score intervals, comparison counts, and separate human measurements. Source matches and snapshot metadata remain available for inspection. EQ-Bench Elo and other secondary measures remain in the bundled artifact but are not picker sort keys.
+The evidence view shows individual ZeroEval coding results, reporting and verification flags, evaluation conditions, comparison groups, and source links. These results never become a composite coding sort. It also shows the producer-selected measurement labels, policies, conditions, limitations, coverage, efforts, uncertainty, source IDs, and provenance. Missing values include the producer's reason. Writing details include score intervals, comparison counts, and separate human measurements. Source matches and snapshot metadata remain available for inspection. EQ-Bench Elo and other secondary measures remain in the bundled artifact but are not picker sort keys.
 
-The consumer validates comparison groups for coding and writing. It rejects mixed groups, incompatible scales, and older snapshots that lack the required group metadata, even if they declare schema `1.0.0`. ZeroEval category means and the OpenRouter coding index remain evidence only. They never replace a missing DeepSWE comparison result.
+The consumer validates the contract revision, complete canonical results, comparison groups, scales, coverage, and numeric order. It rejects older snapshots without `consumerComparisons`, even if they declare schema `1.0.0`. General and Vision remain deferred. ZeroEval category means remain evidence only. The AA coding index has its own sort. It never replaces a missing DeepSWE comparison result.
 
 Missing or invalid benchmark data produces a warning. Model selection remains available without enrichment. The extension does not download data, regenerate scores, call an LLM, track cache usage, or write configuration. Selection changes only the current session model, not the default for new sessions. Authentication failure produces an error notification.
 
@@ -108,8 +113,8 @@ Without this variable, installed-Pi checks report a skip. The reload regression 
 
 ### Update the bundled snapshot
 
-1. Copy the desired `data/summary.json` from the source checkout into `extensions/model-info/summary.json` without changing its bytes.
-2. Update `snapshot.json` with the source revision and SHA-256 hash.
+1. Copy `data/summary.json` and `data/measurement-contract.json` into `extensions/model-info/` without changing their bytes.
+2. Update `snapshot.json` with the source revision, SHA-256 hashes, schema versions, and generator hashes for both artifacts.
 3. Record the snapshot update in the branch's changelog section. Set a new version once for a new feature branch, not for each snapshot edit.
 4. Run the tests and package checks.
 

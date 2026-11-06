@@ -1,13 +1,13 @@
 const object = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const score = (v) => v === null || (typeof v === 'number' && Number.isFinite(v));
-export const SORTS = ['name', 'coding', 'writing'];
-export const SORT_LABELS = { name: 'Name', coding: 'Coding (DeepSWE 1.1)', writing: 'Writing (AI-judged, 0–100)' };
-export const CODING_NOTE = 'DeepSWE 1.1 · vendor-reported · max effort; compute/protocols may differ';
+export const SORTS = ['name', 'coding-index', 'coding', 'writing'];
+export const SORT_LABELS = { name: 'Name', 'coding-index': 'Coding index (AA, 0–1)', coding: 'DeepSWE max effort (0–1)', writing: 'Writing (AI-judged, 0–100)' };
+export const CODING_NOTE = 'AA index and DeepSWE are separate measures · effort and compute differ';
 const aiWriting = row => row?.writingMeasurements?.aiWritingBenchmark?.metrics?.duelScore100;
 
 
 // Schema 1.0.0 separates canonical benchmarks from exact provider routes.
-export function parseSummary(text) {
+export function parseSummary(text, measurementText) {
   const data = JSON.parse(text);
   if (!object(data) || data.schemaVersion !== '1.0.0' || typeof data.generatedAt !== 'string' ||
       !Number.isFinite(Date.parse(data.generatedAt)) || !object(data.models) || !object(data.availability)) {
@@ -57,19 +57,16 @@ export function parseSummary(text) {
       canonical.get(result.modelKey).codingEvidence.push({ benchmark, result, group: data.scores.comparisonGroups[result.comparisonGroupId] });
     }
   }
-  const series = data.scores.codingComparisons?.find(series => series.seriesId === 'deepswe-1.1-max-published-effort');
-  if (!object(series) || series.comparisonGroupId !== 'coding:deepswe-1.1:max-published-effort:vendor-reported:2026-11-05' ||
-      series.sortableWithinGroup !== true || series.scale?.id !== 'deepswe-1.1-score-fraction-0-to-1' ||
-      !Array.isArray(series.results) || !Array.isArray(series.limitations)) throw new Error('Invalid DeepSWE coding series');
-  const seen = new Set();
-  for (const result of series.results) {
-    if (!object(result) || !canonical.has(result.modelKey) || seen.has(result.modelKey) ||
-        result.comparisonGroupId !== series.comparisonGroupId || !score(result.score) ||
-        (result.score !== null && (result.score < 0 || result.score > 1)) || typeof result.reasoningEffort !== 'string') {
-      throw new Error('Invalid DeepSWE coding result');
+  const comparisons = parseComparisons(data, canonical);
+  if (measurementText !== undefined) {
+    const evidence = JSON.parse(measurementText);
+    if (evidence.consumerContractRevision !== data.consumerContractRevision ||
+        JSON.stringify(evidence.consumerComparisons) !== JSON.stringify(data.consumerComparisons)) {
+      throw new Error('Summary and evidence comparisons do not match');
     }
-    seen.add(result.modelKey);
-    canonical.get(result.modelKey).codingComparison = { series, result };
+  }
+  for (const [mode, comparison] of Object.entries(comparisons)) {
+    for (const result of comparison.results) canonical.get(result.modelKey)[`${mode}Comparison`] = { comparison, result };
   }
   const entries = new Map();
   for (const [key, route] of Object.entries(data.availability)) {
@@ -82,6 +79,40 @@ export function parseSummary(text) {
     entries.set(key, route.modelKey === null ? undefined : canonical.get(route.modelKey));
   }
   return { generatedAt: data.generatedAt, entries };
+}
+
+export function parseComparisons(data, models) {
+  if (data.consumerContractRevision !== 'consumer-comparisons-1' || !object(data.consumerComparisons)) {
+    throw new Error('Unsupported consumer comparison contract');
+  }
+  for (const mode of ['coding', 'writing']) {
+    const c = data.consumerComparisons[mode];
+    if (!object(c) || typeof c.comparisonId !== 'string' || typeof c.comparisonGroupId !== 'string' ||
+        c.scoreDirection !== 'higher-is-better' || !Array.isArray(c.results) ||
+        !Array.isArray(c.orderedModelKeys) || !Array.isArray(c.limitations) || !object(c.scale) ||
+        !object(c.selectionPolicy) || !object(c.evaluationConditions) || c.label !== (mode === 'coding' ? 'Coding' : 'Writing') ||
+        c.scale.minimum !== 0 || c.scale.maximum !== (mode === 'coding' ? 1 : 100) ||
+        !['measurementLabel', 'methodology', 'missingValuePolicy', 'orderingPolicy'].every(k => typeof c[k] === 'string')) {
+      throw new Error(`Invalid ${mode} comparison`);
+    }
+    const seen = new Set(), measured = new Map();
+    for (const r of c.results) {
+      if (!object(r) || !models.has(r.modelKey) || seen.has(r.modelKey) || !score(r.score) ||
+          !Array.isArray(r.sourceRecordIds) ||
+          (r.score === null ? r.comparisonGroupId !== null || typeof r.unavailableReason !== 'string' :
+            r.comparisonGroupId !== c.comparisonGroupId || r.score < 0 ||
+            r.score > (mode === 'coding' ? 1 : 100))) throw new Error(`Invalid ${mode} result`);
+      seen.add(r.modelKey);
+      if (r.score !== null) measured.set(r.modelKey, r.score);
+    }
+    const ordered = c.orderedModelKeys;
+    if (seen.size !== models.size || ordered.length !== measured.size || new Set(ordered).size !== ordered.length ||
+        ordered.some((key, i) => !measured.has(key) || (i > 0 && measured.get(ordered[i - 1]) < measured.get(key))) ||
+        c.coverage?.catalogModelCount !== models.size || c.coverage.measuredModelCount !== measured.size) {
+      throw new Error(`Invalid ${mode} coverage or order`);
+    }
+  }
+  return data.consumerComparisons;
 }
 
 export function joinModels(models, catalog) {
@@ -97,16 +128,16 @@ export function sortOptions() {
 
 export function rowDescription(item) {
   const fields = [`[${item.model.provider}]`];
-  for (const [id, label] of [['coding', 'Code'], ['writing', 'Writing']]) {
+  for (const [id, label] of [['coding-index', 'AA'], ['coding', 'DeepSWE'], ['writing', 'Writing']]) {
     const value = metric(item, id);
-    fields.push(`${label} ${value ?? 'n/a'}`);
+    fields.push(`${label} ${value === null ? 'n/a' : id !== 'writing' ? Number(value.toFixed(4)) : value}`);
   }
   return fields.join('  ');
 }
 
 export function metric(item, mode) {
-  if (mode === 'coding') return item.info?.codingComparison?.result.score ?? null;
-  if (mode === 'writing') return aiWriting(item.info)?.score ?? null;
+  if (mode === 'coding-index') return item.info?.coding?.value ?? null;
+  if (mode === 'coding' || mode === 'writing') return item.info?.[`${mode}Comparison`]?.result.score ?? null;
   return null;
 }
 
@@ -125,21 +156,33 @@ export function filterSort(items, query, mode) {
     });
 }
 
-const value = (v) => v === null || v === undefined ? 'unknown' : String(v);
+const value = (v) => v === null || v === undefined ? 'n/a' : String(v);
 const tokens = (v) => Number.isFinite(v) ? v.toLocaleString('en-US') : 'unknown';
+
+function comparisonLines(entry) {
+  if (!entry) return ['Comparison unavailable'];
+  const { comparison: c, result: r } = entry;
+  return ['', `${c.label.toUpperCase()} — ${c.measurementLabel}`,
+    `Score: ${value(r.score)} (${c.label === 'Coding' ? '0–1 fraction' : '0–100, not a percentage'})`,
+    ...(r.score === null ? [r.unavailableReason] : []),
+    c.methodology, `Selection policy: ${JSON.stringify(c.selectionPolicy)}`, c.missingValuePolicy, c.orderingPolicy,
+    `Conditions: ${JSON.stringify(c.evaluationConditions)}`,
+    ...c.limitations,
+    `Coverage: ${c.coverage.measuredModelCount}/${c.coverage.catalogModelCount} models`,
+    `Comparison: ${c.comparisonId} | Group: ${c.comparisonGroupId}`,
+    `Effort: ${value(r.effort)}`,
+    `Uncertainty: ${r.uncertainty === null ? r.uncertaintyUnavailableReason ?? 'unavailable, not certainty' : JSON.stringify(r.uncertainty)}`,
+    `Source records: ${r.sourceRecordIds.join(', ') || 'none'}`,
+    `Provenance: ${JSON.stringify(r.provenance)}`];
+}
 
 // Evidence is descriptive only. Different benchmarks never become a composite sort.
 export function evidenceLines(item) {
   if (!item?.info) return ['No bundled benchmark information for this provider/model'];
   const info = item.info;
-  const writing = info.writingMeasurements?.aiWritingBenchmark;
-  const measure = aiWriting(info);
-  const comparison = info.codingComparison;
-  const lines = [item.key, '', 'CODING — DeepSWE 1.1, maximum published effort',
-    `Score: ${value(comparison?.result.score)} (0–1) | Effort: ${value(comparison?.result.reasoningEffort)}`,
-    ...(comparison ? [comparison.series.comparisonStatus, ...comparison.series.limitations,
-      `Source: ${comparison.result.sourceEvidence?.sourceUrl ?? 'unknown'}`,
-      `Comparison group: ${comparison.series.comparisonGroupId}`] : ['No result in this series. No fallback to another coding measurement.']),
+  const writing = info.writingComparison?.result.provenance;
+  const measure = writing?.metrics?.duelScore100;
+  const lines = [item.key, ...comparisonLines(info.codingComparison),
     '', 'OTHER CODING EVIDENCE — OpenRouter-mirrored AA index',
     `Index: ${value(info.coding.value)} (0–1)`,
     `Source records: ${info.coding.sourceRecordIds?.join(', ') || 'none'}`,
@@ -156,9 +199,7 @@ export function evidenceLines(item) {
       `Source: ${result.sourceUrl ?? result.sourceSnapshot ?? 'not recorded'}`);
   }
   if (!info.codingEvidence?.length) lines.push('No ZeroEval coding results in this snapshot.');
-  lines.push('', 'WRITING — AI Writing Benchmark (AI-judged)',
-    `Score: ${value(measure?.score)} (0–100, not a percentage)`,
-    '50 estimates an even chance against the average model in English.');
+  lines.push(...comparisonLines(info.writingComparison));
   if (writing) lines.push(`Variant: ${writing.sourceModelId}`,
     `Effort: ${writing.reasoningEffort} | Quantization: ${writing.quantization}`,
     `Published score interval: ${measure?.publishedScoreInterval?.join('–') ?? 'unknown'}`,

@@ -1,13 +1,24 @@
 {
   "repository": "https://github.com/datfinesoul/model-info",
-  "revision": "bab629c614b54a83b99a6f19960805d26eb8c60d",
+  "revision": "35962799b8f54c9896b8bb2a164332288c8dfe07",
   "workingTree": true,
   "schemaVersion": "1.0.0",
   "path": "data/summary.json",
-  "sha256": "6800e2699d5dc3df32eec329c743b8a6a723811eff1a900fec1d7408e5e4d7ac",
+  "sha256": "3445b581972aff899046a2ab91546ae1b90f928b1fa6e636d92a04a419f5f32e",
   "generatorFiles": {
-    "build_summary.py": "9c13ab12eca44abea4d6f045c18ec369b5b249a7763059a8f70cb782339d5807",
+    "build_summary.py": "dac994a83550151ae9c056577f16221fd3a6e59cd475fbf53e6dec658d0a1489",
+    "consumer_comparisons.py": "b86b723c2387189809bcacbe9c9b99b6a0c551c7cf422a288bac1aebe5ca143b",
     "identity.py": "84f9c5c0821a22cab53195bb7f53f8f64b9372ac491d602190b8388a9b588428"
+  },
+  "measurementContract": {
+    "path": "data/measurement-contract.json",
+    "schemaVersion": "2.0.0",
+    "sha256": "c0cca0c57b3c8914ee873cb3c0d01c6bb83451e42f8de5fd19975cf38873ba7a",
+    "generatorFiles": {
+      "build_measurement_contract.py": "aff0ef4c392a0814d32f61f19aa8442c7f3a2abeab1e949a26670c60907f03fd",
+      "consumer_comparisons.py": "b86b723c2387189809bcacbe9c9b99b6a0c551c7cf422a288bac1aebe5ca143b",
+      "deepswe.py": "bdfde426cbdb4a13e0f658368153d01ca53b645415b0c879113ea68849505825"
+    }
   },
   "note": "Copied from an uncommitted source working tree at the recorded revision; source and generator hashes identify the inputs."
 }

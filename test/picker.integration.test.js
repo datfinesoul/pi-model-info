@@ -52,6 +52,9 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
       picker.handleInput('\x1b[B'); picker.handleInput('\r'); assert.match(render(), /Sort: Coding/);
       picker.handleInput('\x13');
       picker.handleInput('\x1b[B'); picker.handleInput('\r');
+      assert.match(render(), /Sort: DeepSWE max effort/);
+      picker.handleInput('\x13');
+      picker.handleInput('\x1b[B'); picker.handleInput('\r');
       assert.match(render(), /Sort: Writing \(AI-judged, 0–100\)/);
       picker.handleInput('\x05');
       assert.match(render(), /Benchmark evidence/);
@@ -87,8 +90,8 @@ test('installed Pi: load, search, sort, scope, resize, switch and cancel', { ski
     assert.match(view, /Scope: scoped/);
     picker.handleInput('\x13');
     const emptySorts = picker.render(100).join('\n');
-    assert.match(emptySorts, /Sort by \(1\/3\)/);
-    assert.match(emptySorts, /Coding \(DeepSWE 1.1\)/);
+    assert.match(emptySorts, /Sort by \(1\/4\)/);
+    assert.match(emptySorts, /DeepSWE max effort \(0–1\)/);
     assert.match(emptySorts, /Writing \(AI-judged, 0–100\)/);
     assert.doesNotMatch(emptySorts, /AA intelligence|group \d/);
     picker.handleInput('\x1b');
